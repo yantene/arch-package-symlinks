@@ -1,0 +1,12 @@
+# Maintainer: yantene <contact at yantene dot net>
+pkgname=stoplight-studio-appimage-symlink
+pkgver=2.8.1
+pkgrel=1
+pkgdesc="Symlink of Stoplight Studio"
+arch=(any)
+license=('Unlicense')
+depends=("stoplight-studio-appimage>=$pkgver")
+package() {
+  mkdir -p ${pkgdir}/usr/bin
+  ln -s /opt/appimages/stoplight-studio.AppImage ${pkgdir}/usr/bin/stoplight-studio
+}
