@@ -1,0 +1,13 @@
+# Maintainer: yantene <contact at yantene dot net>
+pkgname=google-chrome-symlink
+pkgver=104.0.5112.101
+pkgrel=1
+pkgdesc="Symlink of Google Chrome"
+arch=(any)
+license=('Unlicense')
+depends=("google-chrome>=$pkgver")
+package() {
+  mkdir -p ${pkgdir}/usr/bin
+  ln -s /usr/bin/google-chrome-stable ${pkgdir}/usr/bin/google-chrome
+  ln -s /usr/bin/google-chrome-stable ${pkgdir}/usr/bin/chrome
+}
